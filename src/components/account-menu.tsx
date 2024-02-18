@@ -3,16 +3,24 @@ import {
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 import { Button } from "./ui/button";
-import { ChevronDown } from "lucide-react";
-import { DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from "./ui/dropdown-menu";
+import { Building, ChevronDown, LogOut } from "lucide-react";
+import {
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+} from "./ui/dropdown-menu";
 
 export function AccountMenu() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>        
-        <Button variant="outline" className="flex select-none items-center gap-2">
+      <DropdownMenuTrigger asChild>
+        <Button
+          variant="outline"
+          className="flex select-none items-center gap-2"
+        >
           PizzaShop
-          <ChevronDown className="h-4 2-4"/>
+          <ChevronDown className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
@@ -24,7 +32,12 @@ export function AccountMenu() {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-        <span></span>
+          <Building className="mr-2 h-4 w-4" />
+          <span>Perfil da loja</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem className="text-rose-500 dark:text-rose-400">
+          <LogOut className="mr-2 h-4 w-4" />
+          <span>Sair</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
